@@ -1,3 +1,4 @@
+package week1;
 class MatrixMultiplier {
     static class Worker implements Runnable {
         int[][] A, B, C;

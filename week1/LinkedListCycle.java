@@ -1,3 +1,4 @@
+package week1;
 class LinkedListCycle {
     static class Node {
         int val;

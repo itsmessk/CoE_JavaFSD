@@ -1,3 +1,4 @@
+package week1;
 class BankAccount {
     private double balance;
     private final Object lock = new Object();
