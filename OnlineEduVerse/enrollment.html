@@ -7,6 +7,73 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js" type="module" defer></script>
+    <style>
+        .enrollment-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .enrollment-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        #enrollment-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #0056b3, #003f7f);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -26,7 +93,7 @@
     <main>
         <section class="enrollment-section">
             <h1>Start Your Learning Journey</h1>
-            <form id="enrollment-form" class="max-w-[600px] mx-auto">
+            <form id="enrollment-form">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
                     <input type="text" id="full-name" name="full-name" required>
@@ -44,7 +111,7 @@
                         <option value="ui-design">UI/UX Design</option>
                     </select>
                 </div>
-                <button type="submit" class="cta-button w-full">Enroll Now</button>
+                <button type="submit" class="cta-button">Enroll Now</button>
             </form>
         </section>
     </main>
