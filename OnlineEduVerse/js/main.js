@@ -1,6 +1,9 @@
 import { courses, instructors } from "./data.js";
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname.split("/").pop();
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get("id");
+    const instructorId = urlParams.get("id");
     switch (currentPage) {
         case "":
         case "index.html":
@@ -15,8 +18,60 @@ document.addEventListener("DOMContentLoaded", () => {
         case "enrollment.html":
             initEnrollmentPage();
             break;
+        case "course.html":
+            if (courseId) {
+                renderCourseDetails(parseInt(courseId));
+            }
+            break;
+        case "instructor.html":
+            if (instructorId) {
+                renderInstructorDetails(parseInt(instructorId));
+            }
+            break;
     }
 });
+function renderInstructorDetails(instructorId) {
+    const instructor = instructors.find((i) => i.id === instructorId);
+    if (!instructor) {
+        document.body.innerHTML = "<h2>Instructor Not Found</h2>";
+        return;
+    }
+    const instructorContainer = document.getElementById("instructor-details");
+    const instructorCourses = courses.filter((c) => c.instructor === instructor.name);
+    instructorContainer.innerHTML = `
+        <h1>${instructor.name}</h1>
+        <img src="${instructor.image}" alt="${instructor.name}">
+        <p><strong>Expertise:</strong> ${instructor.expertise}</p>
+        <h3>Courses Taught:</h3>
+        <ul>
+            ${instructorCourses.map((c) => `<li><a href="course.html?id=${c.id}">${c.title}</a></li>`).join("")}
+        </ul>
+        <h3>User Ratings:</h3>
+        <p>⭐ 4.5/5 (Based on 120 reviews)</p>
+    `;
+}
+function renderCourseDetails(courseId) {
+    const course = courses.find((c) => c.id === courseId);
+    if (!course) {
+        document.body.innerHTML = "<h2>Course Not Found</h2>";
+        return;
+    }
+    const courseContainer = document.getElementById("course-details");
+    courseContainer.innerHTML = `
+        <h1>${course.title}</h1>
+        <img src="${course.image}" alt="${course.title}">
+        <p><strong>Instructor:</strong> ${course.instructor}</p>
+        <p><strong>Category:</strong> ${course.category}</p>
+        <p><strong>Duration:</strong> ${course.duration}</p>
+        <p><strong>Price:</strong> $${course.price}</p>
+        <p><strong>Prerequisites:</strong> Basic knowledge required.</p>
+        <h3>User Reviews:</h3>
+        <ul id="reviews">
+            <li>Great course! - John</li>
+            <li>Very informative. - Sarah</li>
+        </ul>
+    `;
+}
 function initHomePage() {
     renderFeaturedCourses();
     initTabs();
@@ -111,7 +166,6 @@ function initEnrollmentForm() {
         const formData = new FormData(form);
         const enrollmentData = Object.fromEntries(formData.entries());
         console.log("Enrollment data:", enrollmentData);
-        // Here you would typically send this data to a server
         alert("Enrollment submitted successfully!");
         form.reset();
     });
@@ -120,13 +174,15 @@ function createCourseCard(course) {
     const card = document.createElement("div");
     card.className = "course-card";
     card.innerHTML = `
-        <img src="${course.image}" alt="${course.title}">
-        <div class="course-card-content">
-            <h3>${course.title}</h3>
-            <p>Instructor: ${course.instructor}</p>
-            <p>Duration: ${course.duration}</p>
-            <p>Price: $${course.price}</p>
-        </div>
+        <a href="course.html?id=${course.id}">
+            <img src="${course.image}" alt="${course.title}">
+            <div class="course-card-content">
+                <h3>${course.title}</h3>
+                <p>Instructor: ${course.instructor}</p>
+                <p>Duration: ${course.duration}</p>
+                <p>Price: $${course.price}</p>
+            </div>
+        </a>
     `;
     return card;
 }
@@ -134,11 +190,13 @@ function createInstructorCard(instructor) {
     const card = document.createElement("div");
     card.className = "instructor-card";
     card.innerHTML = `
-        <img src="${instructor.image}" alt="${instructor.name}">
-        <div class="instructor-card-content">
-            <h3>${instructor.name}</h3>
-            <p>${instructor.expertise}</p>
-        </div>
+        <a href="instructor.html?id=${instructor.id}">
+            <img src="${instructor.image}" alt="${instructor.name}">
+            <div class="instructor-card-content">
+                <h3>${instructor.name}</h3>
+                <p>${instructor.expertise}</p>
+            </div>
+        </a>
     `;
     return card;
 }
