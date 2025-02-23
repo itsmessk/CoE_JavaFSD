@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll - EduVerse</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/logo.png" width="140px" height="80px" alt="EduVerse Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="enrollment.html" class="active">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="enrollment-section">
+            <h1>Start Your Learning Journey</h1>
+            <form id="enrollment-form" class="max-w-[600px] mx-auto">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-select">Select Course</label>
+                    <select id="course-select" name="course-select" required>
+                        <option value="">Choose a course</option>
+                        <option value="web-dev">Web Development Fundamentals</option>
+                        <option value="python">Python Programming</option>
+                        <option value="ui-design">UI/UX Design</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button w-full">Enroll Now</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EduVerse. All rights reserved.</p>
+    </footer>
+</body>
+</html>
