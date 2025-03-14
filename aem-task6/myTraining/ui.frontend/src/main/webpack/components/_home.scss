@@ -1,0 +1,93 @@
+/* Main Teaser Container */
+.cmp-teaser {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: linear-gradient(135deg, #ffffff, #f4f4f4) !important;
+    color: #111 !important; /* Deep black */
+    padding: 3rem !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    gap: 3rem !important;
+    transition: all 0.3s ease-in-out !important;
+    margin: 2rem 1.5rem !important; /* Added margins for spacing between teasers */
+    border: 3px solid rgba(0, 0, 0, 0.1) !important; /* Stylish border */
+}
+
+/* Content Block */
+.cmp-teaser__content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    max-width: 55% !important;
+}
+
+/* Title */
+.cmp-teaser__title {
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    color: #222 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+}
+
+.cmp-teaser a{
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    color: #222 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+}
+
+/* Text */
+.cmp-teaser__description {
+    font-size: 1.2rem !important;
+    color: #555 !important;
+    line-height: 1.8 !important;
+    font-weight: 500 !important;
+}
+
+/* Image - Placed on the Right */
+.cmp-teaser__image {
+    max-width: 40% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
+    border: 3px solid rgba(0, 0, 0, 0.1) !important; /* Adds a subtle border */
+}
+
+/* Hover Effects */
+.cmp-teaser:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.cmp-teaser:hover .cmp-teaser__image {
+    transform: scale(1.08) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cmp-teaser {
+        flex-direction: column-reverse !important;
+        text-align: center !important;
+        padding: 2rem !important;
+    }
+
+    .cmp-teaser__content {
+        max-width: 100% !important;
+    }
+
+    .cmp-teaser__image {
+        max-width: 100% !important;
+        margin-bottom: 1.5rem !important;
+    }
+}

@@ -1,0 +1,53 @@
+<!-- Home Banner Component -->
+<style>
+    .cmp-homebanner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+    
+    .cmp-homebanner__image img {
+        width: 550px; /* Adjust based on design */
+        height: 500px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cmp-homebanner__content {
+        flex: 1;
+        max-width: 600px;
+    }
+    
+    .cmp-homebanner__title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .cmp-homebanner__description {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+    }
+    
+</style>
+
+
+<div class="cmp-homebanner">
+    <!-- Left side: Author Image -->
+    <div class="cmp-homebanner__image" data-sly-test="${properties.authorImage}">
+        <img src="${properties.authorImage}" alt="Author Image">
+    </div>
+
+    <!-- Right side: Title & Description -->
+    <div class="cmp-homebanner__content">
+        <h2 class="cmp-homebanner__title" data-sly-test="${properties.title}">${properties.title}</h2>
+        <p class="cmp-homebanner__description" data-sly-test="${properties.description}">${properties.description}</p>
+    </div>
+</div>

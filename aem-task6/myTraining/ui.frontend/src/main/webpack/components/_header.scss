@@ -1,0 +1,187 @@
+/* Premium Matte Header Styling */
+.cmp-header {
+    background-color: #0a0a0a !important; /* Deep matte black */
+    color: #fff !important;
+    padding: 15px 40px !important; /* Spacious padding */
+    padding-left: 0 !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05) !important;
+    width: 100% !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+/* Logo Styling */
+.cmp-header img {
+    max-width: 150px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0px auto 0px auto !important;
+    margin-bottom: 0 !important;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1)) !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.cmp-header img:hover {
+    transform: scale(1.08) !important;
+    filter: brightness(1.2) !important;
+}
+
+/* Navigation Menu */
+.cmp-header ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.cmp-header hr {
+    margin: 0 !important;
+}
+
+/* Navigation Items */
+.cmp-header li {
+    display: inline-block !important;
+    margin: 0 15px !important; /* Spaced-out buttons */
+}
+
+/* Navigation Links as Buttons */
+.cmp-header a {
+    text-decoration: none !important;
+    color: #0a0a0a !important; /* Matte black text */
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 12px 20px !important;
+    display: inline-block !important;
+    border-radius: 8px !important;
+    background: #fff !important; /* White button */
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease, transform 0.2s ease !important;
+    margin-top: 22px !important;
+}
+
+.cmp-header a:hover {
+    background: #f5f5f5 !important;
+    color: #000 !important;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Button Styling */
+.cmp-header button {
+    background: #fff !important; /* Pure premium white */
+    color: #0a0a0a !important; /* Matte black text */
+    border: 2px solid rgba(0, 0, 0, 0.2) !important; /* Subtle dark border */
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    display: inline-block !important;
+    margin: 15px auto !important;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1) !important; /* Soft floating effect */
+    transition: all 0.3s ease, transform 0.2s ease !important;
+}
+
+.cmp-header button:hover {
+    background: #f0f0f0 !important; /* Softer shade on hover */
+    color: #000 !important; /* Deeper contrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-3px) !important; /* Elegant lift */
+}
+
+/* Dropdown Container */
+.cmp-header .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.cmp-header .dropdown-btn {
+    background: #fff !important;
+    color: #0a0a0a !important;
+    border: 2px solid rgba(0, 0, 0, 0.2) !important;
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Dropdown Menu */
+.cmp-header .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 180px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* Dropdown Menu Items */
+.cmp-header .dropdown-menu li {
+    display: block;
+    padding: 10px 15px;
+}
+
+.cmp-header .dropdown-menu li a {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-size: 16px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.cmp-header .dropdown-menu li a:hover {
+    background: #f5f5f5;
+}
+
+/* Show dropdown when active */
+.cmp-header .dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cmp-header {
+        padding: 20px !important;
+    }
+
+    .cmp-header img {
+        max-width: 120px !important;
+    }
+
+    .cmp-header ul {
+        display: block !important;
+        text-align: center !important;
+        margin: 12px 0 !important;
+    }
+
+    .cmp-header li {
+        display: block !important;
+        margin: 10px 0 !important;
+    }
+
+    .cmp-header a {
+        display: block !important;
+        width: 80% !important;
+        margin: 10px auto !important;
+    }
+
+    .cmp-header button {
+        display: block !important;
+        width: 80% !important;
+        margin: 12px auto !important;
+    }
+}

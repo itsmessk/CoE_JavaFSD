@@ -1,0 +1,95 @@
+<style>
+    .book-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto;
+        padding: 20px;
+        max-width: 1000px; /* Increased width for better spacing */
+    }
+    
+    .book-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        width: 80%; /* Increased width */
+        max-width: 1000px; /* More space for description */
+        padding: 25px;
+        gap: 30px; /* More spacing between image and text */
+    }
+    
+    .book-cover {
+        padding: 20px auto;
+        width: 400px; /* Slightly bigger image */
+        height: 600px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+    
+    .book-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .book-title {
+        font-size: 26px; /* Bigger title */
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: #222;
+    }
+    
+    .book-author, .book-date {
+        font-size: 18px;
+        color: #444;
+        margin: 6px 0;
+    }
+    
+    .book-description {
+        font-size: 16px;
+        color: #555;
+        margin-top: 12px;
+        line-height: 1.7; /* More readable */
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    .buy-now {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff6600;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+    
+    .buy-now:hover {
+        background-color: #e65c00;
+    }
+    
+    </style>
+    
+    <div class="book-container">
+        <div class="book-card">
+            <img src="${properties.coverImage}" alt="Book Cover" class="book-cover">
+            <div class="book-content">
+                <h2 class="book-title">${properties.bookTitle}</h2>
+                <p class="book-author"><strong>Author:</strong> ${properties.bookAuthor}</p>
+                <p class="book-description">${properties.bookDescription}</p>
+                <p class="book-date"><strong>Published on:</strong> Mar 15th 2022</p>
+                <a href="${properties.buyNowLink}" class="buy-now">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    

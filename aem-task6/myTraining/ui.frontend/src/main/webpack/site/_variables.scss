@@ -1,0 +1,16 @@
+//== Font
+$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size:             16px;
+$font-height:           1.5;
+
+//== Color (Black & White Theme)
+
+// Normal mode
+$color-foreground:      #000000;  // Black text
+$color-background:      #FFFFFF;  // White background
+$color-link:            #000000;  // Black links for a clean look
+
+// Dark mode (Invert for high contrast)
+$color-foreground-dark: #FFFFFF;  
+$color-background-dark: #000000;
+$color-link-dark:       #FFFFFF;

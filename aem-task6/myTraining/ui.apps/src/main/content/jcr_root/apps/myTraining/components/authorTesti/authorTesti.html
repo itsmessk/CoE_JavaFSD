@@ -1,0 +1,103 @@
+<style>
+    .author-component h2 {
+        color: white;
+        text-align: center;
+        font-size: 28px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .author-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 3px solid #111;
+    }
+
+    .card h2 {
+        font-size: 20px;
+        margin: 5px 0;
+        color: #111;
+    }
+
+    .card p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #444;
+        font-style: italic;
+    }
+
+    .load-more-btn {
+        display: block;
+        margin: 30px auto;
+        background: #111;
+        color: #fff;
+        border: none;
+        padding: 14px 24px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .load-more-btn:hover {
+        background: #fff;
+        color: #111;
+        border: 2px solid #111;
+    }
+</style>
+
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='myTraining.authorTesti', async=true}"/>
+</sly>
+<hr>
+<div class="author-component" data-sly-use.authorModel="com.myTraining.core.models.AuthorModel">
+    <h2>Testimonials</h2>
+
+    <!-- API Data -->
+    <div class="api-data ${properties.fetchDataFromApi}">
+        ${authorModel.fetchApi}
+    </div>
+
+    <!-- Testimonials Container -->
+    <div class="author-container">
+        <sly data-sly-list.testimonial="${authorModel.fetchApi}">
+            <div class="card">
+                <img src="${testimonial.image}" alt="${testimonial.name}">
+                <h2>${testimonial.name}</h2>
+                <p>"${testimonial.review}"</p>
+            </div>
+        </sly>
+    </div>
+
+    <button id="load-more" class="load-more-btn" data-cards-to-show="${authorModel.loadMoreValue}">
+        Load More
+    </button>
+</div>
