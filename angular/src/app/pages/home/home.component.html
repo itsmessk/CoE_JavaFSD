@@ -1,0 +1,90 @@
+
+<div class="home-container" [ngClass]="{'dark-theme': isDarkMode}">
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="row">
+        <!-- Search Box -->
+        
+        
+        <!-- Weather Dashboard -->
+        <div class="col-lg-8 mb-4">
+          <app-weather-dashboard></app-weather-dashboard>
+        </div>
+        
+        <!-- Weather News -->
+        <div class="col-lg-4 mb-4">
+          <app-weather-news></app-weather-news>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="row mt-3">
+        <div class="col-md-4 mb-4">
+          <div class="quick-links-card">
+            <h3>Quick Links</h3>
+            <ul class="quick-links-list">
+              <li>
+                <a routerLink="/home">
+                  <i class="bi bi-house"></i> Home
+                </a>
+              </li>
+              <li>
+                <a routerLink="/city-weather">
+                  <i class="bi bi-geo-alt"></i> City Weather
+                </a>
+              </li>
+              <li>
+                <a routerLink="/settings">
+                  <i class="bi bi-gear"></i> Settings
+                </a>
+              </li>
+              <li>
+                <a routerLink="/contact">
+                  <i class="bi bi-envelope"></i> Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="featured-locations-card">
+            <h3>Featured Locations</h3>
+            <div class="location-grid">
+              <div class="location-item" *ngFor="let city of featuredCities" (click)="navigateToCity(city)">
+                <i class="bi bi-geo"></i>
+                <span>{{ city }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="weather-tips-card">
+            <h3>Weather Tips</h3>
+            <div class="tip-item">
+              <div class="tip-icon">
+                <i class="bi bi-umbrella"></i>
+              </div>
+              <div class="tip-content">
+                <h4>Rain Check</h4>
+                <p>Always check the forecast before heading out for the day.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <div class="tip-icon">
+                <i class="bi bi-sun"></i>
+              </div>
+              <div class="tip-content">
+                <h4>UV Protection</h4>
+                <p>Wear sunscreen on sunny days, even in winter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
